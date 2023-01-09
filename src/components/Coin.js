@@ -2,7 +2,9 @@ import React from 'react'
 
 const Coin = () => {
   return (
-    <div>Coin</div>
+    <div>
+        <input type='text' className='coin'/>
+    </div>
   )
 }
 

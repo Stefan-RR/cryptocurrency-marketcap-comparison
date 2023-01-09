@@ -5,7 +5,8 @@ function App() {
   return (
     <div className='App'>
       <span className='content'>
-
+        <Coin />
+        <Coin />
       </span>
     </div>
   );
