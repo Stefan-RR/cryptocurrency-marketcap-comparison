@@ -1,12 +1,10 @@
 import React from 'react'
 
-function Coin({ selectedCoin, onChangeCoin, coinOptions }) {
+function Coin({ coinOptions }) {
   return (
     <div>
-        <select id='selected' value={selectedCoin} onChange={onChangeCoin}>
-          {coinOptions.map(option => (
-            <option value={option}>{option}</option>
-          ))}
+        <select id='selected'>
+          {coinOptions}
         </select>
     </div>
   )
