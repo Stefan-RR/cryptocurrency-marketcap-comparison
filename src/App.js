@@ -4,15 +4,14 @@ import './App.css';
 
 function App() {
 
-  const [coinOptions, setCoinOptions] = useState([]);
+  const [coinList, setCoinList] = useState([]);
 
 
   useEffect(() => {
     fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
     .then(res => res.json())
     .then(data => {
-      setCoinOptions([data.name, ...Object.keys(data.market_cap)])
-      console.log(setCoinOptions)
+     setCoinList(data.map(data => <option value={data.id}>{data.name}</option>))
     })
   }, [])
 
@@ -20,13 +19,12 @@ function App() {
     <div className='App'>
       <span className='content'>
         <Coin
-          coinOptions={coinOptions}
+          coinOptions={coinList}
         />
-        <Coin />
-        <Coin
-          coinOptions={coinOptions}
+         <Coin
+          coinOptions={coinList}
         />
-        <Coin />
+        
       </span>
     </div>
   );
