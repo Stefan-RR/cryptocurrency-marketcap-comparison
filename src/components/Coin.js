@@ -3,7 +3,7 @@ import React from 'react'
 function Coin({ coinOptions }) {
   return (
     <div>
-        <select id='selected'>
+        <select className='selected'>
           {coinOptions}
         </select>
     </div>
