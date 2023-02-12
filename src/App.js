@@ -4,6 +4,8 @@ import './App.css';
 
 function App() {
 
+  const [fromCoin, setFromCoin] = useState();
+  const [toCoin, setToCoin] = useState();
   const [coinList, setCoinList] = useState([]);
 
 
@@ -19,9 +21,11 @@ function App() {
     <div className='App'>
       <span className='content'>
         <Coin
+          selectedCoin={fromCoin}
           coinOptions={coinList}
         />
          <Coin
+          selectedCoin={toCoin}
           coinOptions={coinList}
         />
         
