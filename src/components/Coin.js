@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Coin({ coinOptions }) {
+function Coin({ selectedCoin, onChangeCoin, coinOptions }) {
   return (
     <div>
-        <select className='selected'>
+        <select className='selected' value={selectedCoin} onChange={onChangeCoin}>
           {coinOptions}
         </select>
     </div>
