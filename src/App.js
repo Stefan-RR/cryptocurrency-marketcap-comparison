@@ -15,31 +15,41 @@ function App() {
     .then(data => {
      setFromCoinList(data.map(data => <option key={data.id} value={data.market_cap}>{data.name}</option>))
      setToCoinList(data.map(data => <option key={data.id} value={data.circulating_supply}>{data.name}</option>))
-
     })
   }, [])
-
+  
   var mCap = parseInt(fromCoin)
   var supply = parseInt(toCoin)
   var newPrice = mCap/supply
-  
+  const rounded = () => {
+      if (newPrice >=0.001) {
+        return <p>{newPrice.toFixed(2)}</p>
+      } else if (newPrice < 0.001) {
+        return <p>{newPrice.toPrecision(2)}</p>
+      } else {
+        return <p></p>
+      }
+  }
   return (
     <div className='App'>
+      <header>
+        <h1>Cryptocurrency Market-Cap Comparison</h1>
+        <p>Powered by CoinGecko API</p>
+      </header>
       <span className='content'>
-        <p>The price of one</p>
+        <p>The price of one
         <Coin
           selectedCoin={toCoin}
           onChangeCoin={e => setToCoin(e.target.value)}
           coinOptions={toCoinList}
         />
-        <p>with the market cap of</p>
+        with the market cap of
         <Coin
           selectedCoin={fromCoin}
           onChangeCoin={e => setFromCoin(e.target.value)}
           coinOptions={fromCoinList}
         />
-        
-        <p>would be ${newPrice.toFixed(2)}</p>
+        would be ${rounded()}</p>
       </span>
     </div>
   );
