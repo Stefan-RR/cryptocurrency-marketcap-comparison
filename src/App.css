@@ -6,7 +6,20 @@ html, body, #root {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #1d2330;
+  background: rgb(16, 9, 19);
+  background: linear-gradient(58deg, rgba(42,22,50,1) 0%, rgba(29,35,48,1) 100%);
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  color: white;
+  text-align: center;
+}
+header h1 {
+  font-size: 30px;
+}
+header p {
+  font-size: 20px;
 }
 .content {
   text-align: center;
@@ -18,28 +31,34 @@ html, body, #root {
   margin-right: auto;
   margin-bottom: auto;
   margin-top: auto;
-  padding: 120px;
-  width: 900px;
+  padding: 5%;
+  width: auto;
+  height: auto;
   border-width: 1px;
-  border-color: #293143;
-  border-style: solid;
-  border-radius: 15px;
-  background-color: #293143;
+  border-radius: 25px;
+  background: rgb(112,55,136);
+  background: linear-gradient(58deg, rgba(112,55,136,1) 0%, rgb(40, 47, 63) 100%);
+  color: white;
 }
-.coin {
-  min-height: 43.3px;
-  font-size: 30px;
-  margin-left: 4px;
-  background-color: #badad8;
-  background: linear-gradient(0deg, rgba(204,233,229,1) 0%, rgba(186,218,216,1) 100%);
-  border-style: none;
-  border-radius: 5px;
-  color: rgb(59, 59, 59);
+.content p {
+  width: 100%;
+  display: inline;
 }
 .selected {
   margin: 10px;
+  background-color: rgb(146, 113, 160);
+  color: white;
+  border-radius: 5px;
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 option {
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: 20px;
+}
+@media (max-height: 500px) {
+  .App {
+    height: auto;
+  }
 }
