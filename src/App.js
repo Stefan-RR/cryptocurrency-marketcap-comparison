@@ -26,17 +26,20 @@ function App() {
   return (
     <div className='App'>
       <span className='content'>
+        <p>The price of one</p>
+        <Coin
+          selectedCoin={toCoin}
+          onChangeCoin={e => setToCoin(e.target.value)}
+          coinOptions={toCoinList}
+        />
+        <p>with the market cap of</p>
         <Coin
           selectedCoin={fromCoin}
           onChangeCoin={e => setFromCoin(e.target.value)}
           coinOptions={fromCoinList}
         />
-         <Coin
-          selectedCoin={toCoin}
-          onChangeCoin={e => setToCoin(e.target.value)}
-          coinOptions={toCoinList}
-        />
-        <p>{newPrice}</p>
+        
+        <p>would be ${newPrice.toFixed(2)}</p>
       </span>
     </div>
   );
