@@ -33,7 +33,7 @@ function App() {
   return (
     <div className='App'>
       <header>
-        <h1>Cryptocurrency Market-cap Comparison</h1>
+        <h1>Cryptocurrency Market Cap Comparison</h1>
         <p>Powered by CoinGecko API</p>
       </header>
       <span className='content'>
